@@ -20,6 +20,14 @@ body{
   /* background-color: aqua; */
 }
 
+.controls{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+
+
 .grid {
   display: flex;
   flex-wrap: wrap;

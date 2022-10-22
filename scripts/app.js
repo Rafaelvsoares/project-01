@@ -21,7 +21,7 @@ for (let i = 0; i < gridSize; i++){
   const div = document.createElement('div')
   cells.push(div)
   gridElem.appendChild(div)
-  div.innerText = i
+  // div.innerText = i
 }
 // ? Classes
 
@@ -384,8 +384,7 @@ class Items{
     this.ammo = 3
   }
   randomDrop(){
-    const item = 2 
-    // Math.floor(Math.random() *  3)
+    const item = Math.floor(Math.random() *  3)
     
     if (item === 0) {
       addSprite(monster.position, 'gold')
@@ -481,17 +480,17 @@ class Items{
     }
   }
 }
-
+const playerOne = new Player(44, 5, 0)
 const monster = new Monster(3, 'alive')
 const dropItem = new Items()
 let monsterId
-let playerOne
+
 
 startBtn.addEventListener('click', () => {
   clearInterval(monsterId)
-  playerOne = new Player(44, 5, 0)
   healthElem.innerText = playerOne.health
   scoreElem.innerText = playerOne.score
+  addSprite(playerOne.position, 'player')
   document.addEventListener('keyup', playerOne.player)
   monsterAlive()
 })
@@ -504,14 +503,18 @@ resetBtn.addEventListener('click', () => {
 
 // ! Infinite loop to call class monster when dead/alive
 function monsterAlive(){
-  console.log(monster.state);
+  console.log(monster.position)
   if (monster.state === 'dead'){
     monster.position = Math.floor(Math.random() * gridSize)
     monsterDead()
   }
   if (monster.state === 'alive'){
     monsterId = setInterval(() => {
-      monster.move()
+      if (playerOne.health === 0){
+        clearInterval(monsterId)
+      } else {
+        monster.move()
+      }
     }, 1000)
   }
 
