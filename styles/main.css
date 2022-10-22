@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  margin: 0;
+}
+
+.controls-wrapper{
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.grid-wrapper{
+  display: flex;
+  justify-content: center;
+  /* background-color: aqua; */
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 600px;
+  width: 600px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.grid div {
+  border: 1px solid blue;
+  height: 10%;
+  width: 10%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 660px;
+  /* background-color: red; */
+}
+
+.grid div.player{
+  background-image: url('../assets/player.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.grid div.playerProjectile{
+  background-image: url('../assets/playerProjectile.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.grid div.monster{
+  background-image: url('../assets/monster.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.grid div.monsterProjectile{
+  background-image: url('../assets/monsterProjectile.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.grid div.gold{
+  background-image: url('../assets/gold.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.grid div.grave{
+  background-image: url('../assets/grave.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.grid div.health{
+  background-image: url('../assets/health.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.grid div.bomb{
+  background-image: url('../assets/bomb.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.grid div.explosion{
+  background-image: url('../assets/explosion.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
