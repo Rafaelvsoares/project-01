@@ -1,55 +1,69 @@
 # 1st-Project-Rogue-Like-Game
 
-<h1 style="font-size: 40px">Genre: Rogue-like</h1>
+For my first project at General Assembly I was given the freedom to build a game of my choicen using grid, `JavaScript`, `HTML` and `CSS`. I have a passion for indie games, in particular the  roguelike genre, so that's what I chose. 
 
-It is a grid game with gameplay similar to the binding of isaac/ enter the gungeon.<br>
+“Roguelike is a subgenre of role-playing computer games traditionally characterised by a dungeon crawl through procedurally generated levels, turn-based gameplay, grid-based movement, and permanent death of the player character.”
 
-#### MVP or what to expect:
-<ol>
-  <li>At least 1 monster with basic movement and attacks</li>
-  <li>player that can shoot</li>
-  <li>pickup items</li>
-  <li>be able to get points</li>
-</ol>
+The deployment of the game can be found here: [Roguelike](https://rafaelvsoares.github.io/1st-Project-Rogue-Like-Game/)
+
+
+---
+
+
+## Why roguelike?
+
+My inspiration to make my own game was The Binding of Isaac and Enter the Gungeon.
+
+![Isaac and Gungeon](./assets/examplepic.png)
+
+Key features from both games:
+* Procedural generated levels, items, monsters, etc
+* You can shoot/kill monsters.
+* Tests your reflex skills
+* Items synergies
+* Bugs and more bugs which makes the gameplay even more interesting
+
+## MPV
+
+#### What to expect:
+> * At least 1 monster with basic movement and attacks
+> * player that can shoot
+> * pickup items
+> * be able to get points
+
 
 #### If MVP is achieved here are a couple of different ideas that could be implemented:
-<ol>
-  <li>Use canvas to have a free movement including diagonal movement</li>
-  <li>Add boss battle</li>
-  <li>Add music/sounds</li>
-  <li>Main menu</li>
-  <li>Highscore submission board</li>
-  <li>Different items to pickup and use</li>
-</ol>
+> * Use canvas to have a free movement including diagonal movement
+> * Add boss battle
+> * Add music/sounds
+> * Main menu
+> * Highscore submission board
+> * Different items to pickup and use
+
 
 # Things to fix
-The bullets don't register on the monster when he is on the last cells. √
+    1. The bullets don't register on the monster when he is on the last cells. ✅
+    2. Fix the order of the functions, so they work accordingly ✅
+    3. Monster projetile ticks twice ✅
+    4. When player is removed from screen monster's projetiles aren't removed ✅
+    5. You can skipp projectiles if timed right. Leave it in as a feature ✅
+    6. Figure out how to only use one function to shoot projectiles for player
 
-Fix the order of the functions, so they work accordingly √
+**Collision for Items**
 
-Monster projetile ticks twice √
+    1. Bomb ✅
+    2. Heart ✅
+    3. Coin ✅
 
-When player is removed from screen monster's projetiles aren't removed √
 
-You can skipp projectiles if timed right. Leave it in as a feature √
+**Bomb**
 
-figure out how to only use one function to shoot projectiles for player
+    1. Ticks 3 seconds ✅
+    2. Destroys Items
+    3. Damage Player ✅
+    4. 9 pixel radius explosion ✅
 
-Collision for Items
-<ol>
-  <li>Bomb √</li>
-  <li>Heart √</li>
-  <li>Coin √</li>
-</ol>
 
-Bomb
-<ol>
-  <li>Ticks 3 seconds √</li>
-  <li>Destroys Items</li>
-  <li>Damage Player √</li>
-  <li>9 pixel radius explosion √</li>
-</ol>
+**Infinite Enemy spawn**
 
-Infinite Enemy spawn 
-
-<li>Maybe make a function to check a certain condition is met for when the monster is dead/alive infinitely. √</li>
+    Maybe make a function to check a certain condition is met for when the monster is dead/alive infinitely. ✅

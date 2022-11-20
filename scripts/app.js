@@ -14,15 +14,15 @@ const width = 10
 const gridSize = width * width
 // let player = 44
 
-const goldElem = document.querySelector('.gold')
 // ? create cells
 
 for (let i = 0; i < gridSize; i++){
   const div = document.createElement('div')
   cells.push(div)
   gridElem.appendChild(div)
-  // div.innerText = i
+  div.innerText = i
 }
+
 // ? Classes
 
 class Monster {
@@ -480,6 +480,7 @@ class Items{
     }
   }
 }
+
 const playerOne = new Player(44, 5, 0)
 const monster = new Monster(3, 'alive')
 const dropItem = new Items()
@@ -503,8 +504,9 @@ resetBtn.addEventListener('click', () => {
 
 // ! Infinite loop to call class monster when dead/alive
 function monsterAlive(){
-  console.log(monster.position)
+  // console.log(monster.position)
   if (monster.state === 'dead'){
+    //! fix this line and the ones that shoot
     monster.position = Math.floor(Math.random() * gridSize)
     monsterDead()
   }
@@ -521,12 +523,12 @@ function monsterAlive(){
   function monsterDead(){
     setTimeout(() => {
       monster.state = 'alive'
-      console.log(monster.state);
+      // console.log(monster.state);
       monsterAlive()
     }, 5000)
   }
 }
- 
+
 // ! Adds/Removes image
 function addSprite(param, param2){
   cells[param].classList.add(param2)
