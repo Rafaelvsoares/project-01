@@ -20,7 +20,7 @@ for (let i = 0; i < gridSize; i++){
   const div = document.createElement('div')
   cells.push(div)
   gridElem.appendChild(div)
-  div.innerText = i
+  // div.innerText = i
 }
 
 // ? Classes
