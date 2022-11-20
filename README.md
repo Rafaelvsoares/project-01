@@ -1,6 +1,6 @@
 # 1st-Project-Rogue-Like-Game
 
-For my first project at General Assembly I was given the freedom to build a game of my choicen using grid, `JavaScript`, `HTML` and `CSS`. I have a passion for indie games, in particular the  roguelike genre, so that's what I chose. 
+For my first project at General Assembly I was given the freedom to build a game of my choice using grid, `JavaScript`, `HTML` and `CSS`. I have a passion for indie games, in particular the roguelike genre, so that's what I chose. 
 
 “Roguelike is a subgenre of role-playing computer games traditionally characterised by a dungeon crawl through procedurally generated levels, turn-based gameplay, grid-based movement, and permanent death of the player character.”
 
@@ -27,9 +27,9 @@ Key features from both games:
 
 #### What to expect:
 > * At least 1 monster with basic movement and attacks
-> * player that can shoot
-> * pickup items
-> * be able to get points
+> * Player that can shoot
+> * Pickup items
+> * Be able to get points
 
 
 #### If MVP is achieved here are a couple of different ideas that could be implemented:
