@@ -4,7 +4,7 @@ const startBtn = document.querySelector(".start-button")
 const resetBtn = document.querySelector(".reset-button")
 const scoreElem = document.querySelector(".score-points")
 const healthElem = document.querySelector(".health-points")
-const ammoElem = document.querySelector(".ammo-points")
+// const ammoElem = document.querySelector(".ammo-points")
 const gridElem = document.querySelector(".grid")
 
 // ? global data
@@ -220,7 +220,7 @@ class Player{
     this.position = position
     this.health = health
     this.score = score
-    this.ammo =  5
+    // this.ammo =  5
   }
   move(e){
     if (e.key === 'd' && (this.position + 1) % width !== 0){
@@ -485,7 +485,7 @@ const monster = new Monster(3, 'alive')
 const dropItem = new Items()
 let monsterId
 
-
+//! Start game
 startBtn.addEventListener('click', () => {
   clearInterval(monsterId)
   healthElem.innerText = playerOne.health
@@ -495,6 +495,7 @@ startBtn.addEventListener('click', () => {
   monsterAlive()
 })
 
+//! Reset game
 resetBtn.addEventListener('click', () => {
   location.reload()
 })
