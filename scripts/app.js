@@ -76,7 +76,6 @@ class Monster {
     let upProjectileIndex = this.position
 
     function moveProjectileRight(){
-
       // if projectile is in the same index as player
       if (rightProjectileIndex === playerOne.position){
         removeSprite(rightProjectileIndex, 'monsterProjectile')
@@ -84,15 +83,13 @@ class Monster {
         // playerOne.health - 1
         console.log('healthright')
         healthElem.innerText = playerOne.health--
-        
         // if projectile reaches the right cell indexes
       } else if ((rightProjectileIndex + 1) % width === 0){
         removeSprite(rightProjectileIndex, 'monsterProjectile')
         clearInterval(projectileRightId)
-        
-      //   // player dies
-      // } else if (playerOne.health < 1){
-      //   removeSprite(playerOne.position, 'player')
+        // player dies
+      } else if (playerOne.health < 1){
+        removeSprite(playerOne.position, 'player')
 
         // projectile keeps going right
       } else {
@@ -107,8 +104,8 @@ class Monster {
       if (leftProjectileIndex === playerOne.position){
         console.log('hit')
         removeSprite(leftProjectileIndex, 'monsterProjectile')
-        // playerOne.health -= 1
-        // healthElem.innerText = playerOne.health
+        playerOne.health -= 1
+        healthElem.innerText = playerOne.health
         clearInterval(projectileLeftId)
 
         //if projectile reaches the left cell indexes -> remoce
@@ -116,9 +113,9 @@ class Monster {
         removeSprite(leftProjectileIndex, 'monsterProjectile')
         clearInterval(projectileLeftId)
 
-      //   // player dies
-      // } else if (playerOne.health < 1){
-      //   removeSprite(playerOne.position, 'player')
+        // player dies
+      } else if (playerOne.health < 1){
+        removeSprite(playerOne.position, 'player')
 
         // projectile keeps going left 
       } else {
@@ -134,18 +131,18 @@ class Monster {
         console.log('hit')
         removeSprite(downProjectileIndex, 'monsterProjectile')
         clearInterval(projectileDownId)
-        // downProjectileIndex = null
-        // playerOne.health -= 1
-        // healthElem.innerText = playerOne.health
+        downProjectileIndex = null
+        playerOne.health -= 1
+        healthElem.innerText = playerOne.health
 
       // if projectile reaches the bottom cell indexes -> remove
       } else if (Math.floor(downProjectileIndex / width) === width - 1){
         removeSprite(downProjectileIndex, 'monsterProjectile')
         clearInterval(projectileDownId)
       
-      // // player dies
-      // } else if (playerOne.health < 1){
-      //   removeSprite(playerOne.position, 'player')
+      // player dies
+      } else if (playerOne.health < 1){
+        removeSprite(playerOne.position, 'player')
 
       // projectile keeps going down
       } else {
@@ -169,9 +166,9 @@ class Monster {
         removeSprite(upProjectileIndex, 'monsterProjectile')
         clearInterval(projectileUpId)
 
-      // // player dies
-      // } else if (playerOne.health < 1){
-      //   removeSprite(playerOne.position, 'player')
+      // player dies
+      } else if (playerOne.health < 1){
+        removeSprite(playerOne.position, 'player')
 
         // projectile keeps going up
       } else {
@@ -399,7 +396,7 @@ class Items{
     addSprite(monster.position, 'bomb')
     const bombElem = document.querySelector('.bomb')
     const bombIndex = cells.indexOf(bombElem)
-    let bombId = setTimeout(()=>{
+    setTimeout(()=>{
       removeSprite(bombIndex, 'bomb')
       addSprite(bombIndex, 'explosion')
       
@@ -407,51 +404,42 @@ class Items{
       if (Math.floor(bombIndex / width) !== 0) {
         addSprite(bombIndex - width, 'explosion')
       }
-
       // ! down -> adds explosion sprite
       if (Math.floor((bombIndex + width) / width) < 10){
         addSprite(bombIndex + width, 'explosion')
       }
-
       // ! left -> adds explosion sprite
       if (bombIndex % width !== 0) {
         addSprite(bombIndex - 1, 'explosion')
       }
-
       // ! right -> adds explosion sprite
       if ((bombIndex + 1) % width !== 0){
         addSprite(bombIndex + 1, 'explosion')
       }
-
       // ! up-right -> adds explosion sprite
       if (Math.floor(bombIndex / width) !== 0 && (bombIndex + 1) % width !== 0){
         addSprite(bombIndex - (width - 1), 'explosion')
       }
-
       // ! up-left -> adds explosion sprite
       if (Math.floor(bombIndex / width) !== 0 && bombIndex % width !== 0){
         addSprite(bombIndex - (width + 1), 'explosion')
       }
-
       // ! down-right -> adds explosion sprite
       if (Math.floor(bombIndex / width) !== 9 && (bombIndex + 1) % width !== 0) {
         addSprite(bombIndex + (width + 1), 'explosion')
       }
-      
       // ! down-left -> adds explosion sprite
       if (Math.floor(bombIndex / width) !== 9 && bombIndex % width !== 0) {
         addSprite(bombIndex + (width - 1), 'explosion')
       } 
-
       // ! Removes explosion sprite after 5 seconds
-      const bombRemove = setTimeout(() => {
+      setTimeout(() => {
         const explosionElems = document.querySelectorAll('.explosion')
-        const explosions = explosionElems.forEach((explosion) => {
+        explosionElems.forEach((explosion) => {
           const explosionIndex = cells.indexOf(explosion)
           if (explosionIndex === playerOne.position){
             playerOne.health--
             healthElem.innerText = playerOne.health
-            
           }
           removeSprite(explosionIndex, 'explosion' )
         })
